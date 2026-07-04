@@ -1,0 +1,53 @@
+Question: Why you cant declare "var name = 'jayant';" in TS?
+Ans: In JavaScript and TypeScript, window.name (or the global name variable) is a built-in property used to set or
+     get the name of a browser window due to which TS might think:
+     1) It's a type mismatch: The built-in global name is strictly defined as a string.
+     2) Redeclared variable: When you use var in the global scope (outside a function), TypeScript thinks you are
+     trying to redefine this existing global variable.
+     3) Block Scope Absence: Unlike let or const, var does not respect block scoping, forcing it into the global
+     space if written in the root of a file.
+
+     How to fix it:
+     1) Add export {} at the top of your file so, file turns into a module isolating your variable from the global scope.
+     2) Use let or const instead as they forbid redeclaration.
+     3) Change the variable name.
+     4) Wrap the var name inside the function to restrict its scope.
+
+Question: Are null and undefined values are same?
+Ans: No, both are different as:
+     undefined: It means a variable has been declared but has not been assigned a value yet. JS assign this automatically.
+     null: It is intentional absence of value. A programmer explicitly assigned the value as null to show that this
+     variable is empty.
+
+     In simple way you can say that undefined assigned to a variable where there's a chance that some value
+     will be assigned to it in the future.
+     Whereas, null is assigned to a variable where we want that not now and not even in future a value
+     will be assign to it.
+
+     Both represents empty state but they are absolutely different (null == undefined gives true) but (null === undefined gives false)
+
+     Numeric value of undefined is NaN but for null it is 0.
+
+Question: "===" matches memory location or just value and dtype?
+Ans:  For Primitives: It checks Value and Type but for Objects: It checks the Memory Location.
+      why object checks the memory location? : As Even though Objects contents and types are identical, but objects are
+       stored in two entirely different places in your computer's memory if thet are declared separately and both are
+       not referenced to each other.
+       like:
+       const obj1 = { id: 1 };
+       const obj2 = { id: 1 };
+       console.log(obj1 === obj2); // false
+
+       but with reference:
+       const obj1 = { id: 1 };
+       const obj2 = obj1;
+       console.log(obj1 === obj2); // true
+
+Question: Why assigning a null value to variable with explicit dtypes throws in my system while my friend
+        does not face this issue.
+Ans: Since assigning a null values to such variable are a major safety issue so, we should not do it and
+     the reason your friend is not getting the error because he might have "strict:false" or
+     "strictNullChecks:false" in his tsconfig.json which bypass such safety checks.
+
+Question: Why TS file are converted to JS file?
+Ans: Because browsers only understand JS not TS.

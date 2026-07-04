@@ -1,0 +1,89 @@
+/tmp
+/out-tsc
+
+/node_modules
+/.pnp
+.pnp.js
+
+# ==============================================================================
+# Dependency Directories
+# ==============================================================================
+node_modules/
+jspm_packages/
+web_modules/
+
+# ==============================================================================
+# TypeScript & JavaScript Build / Compilation Outputs
+# ==============================================================================
+# Common build directory names for JS/TS compilation
+dist/
+build/
+out/
+lib/
+target/
+
+# TS incremental compilation cache files
+*.tsbuildinfo
+
+# ==============================================================================
+# Runtime & Log Files
+# ==============================================================================
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# ==============================================================================
+# Environment and Secret Files (DO NOT COMMIT)
+# ==============================================================================
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.env
+*.env.*
+
+# ==============================================================================
+# Testing & Code Coverage Outputs
+# ==============================================================================
+coverage/
+.nyc_output/
+.jest/
+.playwright/
+playwright-report/
+test-results/
+
+# ==============================================================================
+# IDE, Editors, and OS Metadata
+# ==============================================================================
+# IDE settings
+.vscode/*
+!.vscode/extensions.json
+!.vscode/launch.json
+!.vscode/settings.json
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# ==============================================================================
+# Framework & Diagnostic Caches
+# ==============================================================================
+.eslintcache
+.stylelintcache
+.prettiercache
+.parcel-cache
+.cache/
+.next/
+.nuxt/
+.astro/

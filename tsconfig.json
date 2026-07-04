@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "commonjs",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "moduleDetection": "force",
+    "strict": true,
+    "skipLibCheck": true,
+    "outDir": "JS_files",
+    "noEmitOnError": true, // prevents TypeScript from generating JavaScript files if there is a single type error.
+    //"strictNullChecks": true, // It avoids null values getting assigned to string or number dtypes variable.
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "types": ["reflect-metadata"]
+  },
+  "include": ["src/**/*"]
+}
